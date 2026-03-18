@@ -19,7 +19,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -31,7 +30,6 @@ import com.ceocoding.cineaux.R
 import com.ceocoding.cineaux.navigation.RootScreen
 import com.ceocoding.cineaux.presentation.search.components.SearchTextField
 import com.ceocoding.cineaux.presentation.search.components.SearchedFilmItem
-import com.ceocoding.cineaux.ui.theme.CyanColor
 import com.ceocoding.cineaux.ui.theme.DarkBlue
 import com.ceocoding.cineaux.util.UiEvent
 
@@ -117,6 +115,13 @@ fun SearchScreen(
     ){
         when {
             state.isSearching -> CircularProgressIndicator()
+            !state.hasSearched-> {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(painter = painterResource(id = R.drawable.search_icon), contentDescription = "search_icon", modifier = Modifier.size(80.dp))
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Text(text = stringResource(id = R.string.movie_search), color = Color.Gray, fontSize = 16.sp)
+                }
+            }
             state.films.isEmpty() -> {
                 Text(
                     text = stringResource(id = R.string.no_results),

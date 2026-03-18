@@ -22,7 +22,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
-import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ceocoding.cineaux.R
@@ -88,7 +87,7 @@ fun SearchTextField(
             modifier = Modifier.align(Alignment.CenterEnd)
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.search_icon),
+                painter = painterResource(id = R.drawable.big_search_icon),
                 contentDescription = hint,
                 tint = Color.White
             )

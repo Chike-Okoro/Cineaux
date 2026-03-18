@@ -14,21 +14,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.currentBackStackEntryAsState
 import com.ceocoding.cineaux.R
-import com.ceocoding.cineaux.navigation.RootScreen
 import com.ceocoding.cineaux.presentation.components.BottomMenuData
-import com.ceocoding.cineaux.presentation.components.BottomNavItem
 import com.ceocoding.cineaux.presentation.home.HomeViewModel
 import com.ceocoding.cineaux.ui.theme.AshColor
-import com.ceocoding.cineaux.ui.theme.CyanColor
 import com.ceocoding.cineaux.ui.theme.DarkBlue
 
 @Composable
@@ -71,7 +64,7 @@ fun HomeScreen(
                 color = Color.LightGray
             )
             Image(
-                painter = painterResource(id = R.drawable.search_icon),
+                painter = painterResource(id = R.drawable.big_search_icon),
                 contentDescription = "",
                 colorFilter = ColorFilter.tint(Color.White)
             )

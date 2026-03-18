@@ -6,5 +6,6 @@ data class SearchState(
     val films: List<FilmData> = emptyList(),
     val isSearching: Boolean = false,
     val query: String = "",
-    val isHintVisible: Boolean = false
+    val isHintVisible: Boolean = false,
+    val hasSearched: Boolean = false
 )

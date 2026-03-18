@@ -49,15 +49,16 @@ class SearchViewModel @Inject constructor(
     }
 
     private fun executeSearch(){
+        if(state.query.isBlank()) return
         viewModelScope.launch {
             getFilmData(state.query)
                 .onEach { result ->
                     when(result){
                         is Resource.Loading -> {
-                            state = state.copy(isSearching = true)
+                            state = state.copy(isSearching = true, hasSearched = true)
                         }
                         is Resource.Error -> {
-                            state = state.copy(isSearching = false)
+                            state = state.copy(isSearching = false, hasSearched = true)
                             _uiEvent.send(
                                 UiEvent.ShowToast(
                                     UiText.StringResource(R.string.error_something_went_wrong)
@@ -67,7 +68,8 @@ class SearchViewModel @Inject constructor(
                         is Resource.Success -> {
                             state = state.copy(
                                 films = result.data ?: emptyList(),
-                                isSearching = false
+                                isSearching = false,
+                                hasSearched = true
                             )
                         }
                     }

@@ -71,7 +71,6 @@ fun WatchListScreen(
                 ) {
                     WatchListItem(filmDetail = filmDetail, parentNavController = parentNavController)
                 }
-
             }
         }
     }
@@ -103,6 +102,5 @@ fun WatchListScreen(
                 }
             }
         }
-
     }
 }

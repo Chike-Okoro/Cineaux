@@ -97,10 +97,10 @@ fun DetailsScreen(
                     onClick = {
                         if(isInWatchList){
                             watchListViewModel.removeFromWatchList(filmDetail)
-                            Toast.makeText(context, "Removed From WishList", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "Removed From WatchList", Toast.LENGTH_SHORT).show()
                         }else{
                             watchListViewModel.addToWatchList(filmDetail)
-                            Toast.makeText(context, "Added to WishList", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "Added to WatchList", Toast.LENGTH_SHORT).show()
                         }
                     },
                     modifier = Modifier.constrainAs(saveIcon){
